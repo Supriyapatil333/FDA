@@ -1,0 +1,53 @@
+
+  <div class="container">
+    <div class="col-lg-8 m-auto d-block">
+ <h3>Create Customer</h3>
+ 
+   <form (ngSubmit)="onSubmit()" ngNativeValidate>
+     <div class="form-group">
+       <label for="CustomerId">Customer Id</label>
+       <input type="text" class="form-control" id="cid"  [(ngModel)]="customer.customer_id" name="cid" 
+        >
+     </div>
+ 
+     <div class="form-group">
+       <label for="name">First Name</label>
+       <input type="text" class="form-control" id="cname"  [(ngModel)]="customer.first_name" name="firstname" 
+        minlength="2" maxlength="50" pattern="[A-Z a-z]{2,50}" placeholder="Enter your First Name" required>
+     </div>
+     <div class="form-group">
+         <label for="name">Last Name</label>
+         <input type="text" class="form-control" id="tech"  [(ngModel)]="customer.last_name" name="lastname"
+         minlength="2" maxlength="50" pattern="[A-Z a-z]{2,50}" placeholder="Enter your Last Name" required>
+       </div>
+
+       <div class="form-group">
+        <label for="name">gender</label>
+        <br>
+        <!-- <input type="text" class="form-control" id="cgender" required [(ngModel)]="customer.gender" name="gender"> -->
+        <input type="radio"  id="male" name="gender" value="male" [(ngModel)]="customer.gender">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" [(ngModel)]="customer.gender">
+         <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" [(ngModel)]="customer.gender">
+        <label for="other">Other</label> 
+        
+      </div>
+
+      <div class="form-group">
+        <label for="name">Address</label>
+        <input type="text" class="form-control" id="caddress" required [(ngModel)]="customer.address" name="address"
+        minlength="2" maxlength="100" placeholder="Enter your Address">
+      </div>
+
+      <div class="form-group">
+        <label for="ContactNumber">Contact Number</label>
+        <input type="text" class="form-control" id="contactno" required [(ngModel)]="customer.contact_number" name="contact"
+        maxlength="10"  placeholder="Enter your contact no" pattern="^[6-9]{1}[0-9]{9}">
+      </div>
+     <button class="btn btn-success "  >Add Customer</button>
+   </form>
+ </div>
+
+
+ 
